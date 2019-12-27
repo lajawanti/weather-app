@@ -14,6 +14,13 @@ class App extends React.Component {
     this.state = {
         city: undefined,
         country: undefined,
+        icon: undefined,
+        main: undefined,
+        celsius: undefined,
+        temp_max: undefined,
+        temp_min: undefined,
+        description: '',
+        error: false
     }
     this.getWeather();
   }
@@ -32,7 +39,14 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-          <Weather city= {this.state.city} country= {this.state.country}/>
+          <Weather 
+              city= {this.state.city} 
+              country= {this.state.country}
+              temp_celsius= {this.state.celsius}
+              temp_max= {this.state.temp_max}
+              temp_min= {this.state.temp_min}
+              description= {this.state.description}
+          />
       </div>
     );
   }
