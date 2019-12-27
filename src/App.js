@@ -12,21 +12,27 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-
+        city: undefined,
+        country: undefined,
     }
     this.getWeather();
   }
 
   getWeather = async() => {
-    const api_call = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID =${API_KEY}')
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${API_KEY}`)
     const response = await api_call.json();
     console.log(response);
+
+    this.setState({
+      city: response.name, //cityname
+      country: response.sys.country, //country name
+    }) 
   }
 
   render(){
     return (
       <div className="App">
-          <Weather />
+          <Weather city= {this.state.city} country= {this.state.country}/>
       </div>
     );
   }
