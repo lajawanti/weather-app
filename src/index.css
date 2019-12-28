@@ -5,10 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('./assets/background.jpg');
+  background: url('./assets/background-02.png');
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh !important;
 }
+/* 
+@media (min-width: 50em) {
+	body {
+		height: 100vh !important;
+	}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

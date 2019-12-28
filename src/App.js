@@ -50,7 +50,7 @@ class App extends React.Component {
         console.log(response);
         console.log("TTT " ,response.main.temp);
         this.setState({
-          city: `${response.name},${response.sys.country}`,//cityname
+          city: `${response.name} - ${response.sys.country}`,//cityname
           celsius: this.calculateInCelsius(response.main.temp),
           temp_max: this.calculateInCelsius(response.main.temp_max),
           temp_min: this.calculateInCelsius(response.main.temp_min),
